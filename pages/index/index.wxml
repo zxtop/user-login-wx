@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <button bindtap="credit">获取用户的积分</button>
+
+  <!-- 用户头像 -->
+  <!-- <open-data type="userAvatarUrl"></open-data> -->
+
+  <!-- 用户昵称 -->
+  <!-- <open-data type="userNickName"></open-data> -->
+
+  <!-- 用户性别 -->
+  <!-- <open-data type="userGender" lang="zh_CN"></open-data> -->
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+      <text class="userinfo-nickname">{{userInfo.city}}</text>
+
+      <open-data type="userGender" lang="zh_CN"></open-data>
+    </block>
+  </view>
+
+  
+
+
+</view>
